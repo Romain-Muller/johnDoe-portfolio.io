@@ -1,0 +1,422 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Indie+Flower&display=swap');
+
+/* Element */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Baloo Bhaijaan 2', cursive, sans-serif;
+}
+
+header {
+    position:sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background: black;
+}
+
+footer, header {
+    height: 4rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: Indie Flower, Arial, sans-serif;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size:2em;
+    font-family: Indie Flower, Arial, sans-serif;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin: 0 0.5em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* CLASS */
+/* .flex-container {
+    display:flex;
+    flex-direction: column;
+} */
+
+/* .main {
+    flex-grow: 1;
+} */
+
+.container {
+    width: 80%;
+}
+
+.header-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 auto;
+}
+
+.container-grid, .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container-grid:first-of-type {
+    height: calc(100vh - 4rem);
+}
+
+.container-grid:nth-of-type(2) {
+    position:relative;
+    height: 100vh;
+}
+
+.black-column {
+    position:relative;
+    background: black;
+}
+
+.white-column {
+    background: hsl(49, 100%, 97%);
+    height: 100%;
+    overflow:clip;
+}
+
+.waves {
+    opacity: 0.5;
+}
+
+.presentation {
+    color: white;
+    position: absolute;
+    inset:0;
+    width:90%;
+    margin: 21.5rem 0 0 4rem;
+}
+
+.content-header {
+    display: flex;
+}
+
+.project-content {
+    position:absolute;
+    inset:0;
+    display:grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.projects {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height:80%;
+    width: 80%;
+}
+
+.black-border-column {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "projet-1 projet-1"
+    "projet-2 projet-2"
+    ;
+    place-items: center;
+    border-top:4px;
+    border-left:4px;
+    border-bottom:4px;
+    border-color:black;
+    border-style: solid;
+    border-right:4px;
+    box-shadow: 2px 2px 3px black;
+}
+
+.white-border-column {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "projet-3 projet-4"
+    "projet-5 projet-5"
+    ;
+    place-items: center;
+    border-top:4px;
+    border-left:4px;
+    border-bottom:4px;
+    border-color:hsl(49, 100%, 97%);
+    border-style: solid;
+    border-left:4px;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.615);
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 10rem;
+    height: 3rem;
+    background:white;
+    box-shadow: 1px 1px 3px black;
+    position: relative;
+}
+
+.btn::before {
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    content: "";
+    position: absolute;
+    background: black;
+    transition: all .3s ease;
+}
+
+.btn-placement {
+    position: absolute;
+    inset:0;
+    display:grid;
+    align-items: center;
+    text-align: center;
+    background: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.4em;
+    transition: 0.4s;
+    transition-delay: 0.1s;
+}
+
+.btn>.white-border-column{
+    width: 100%;
+    height: 100%;
+}
+
+.btn-border-black {
+    border-top:4px;
+    border-right:4px;
+    border-bottom:4px;
+    border-color:black;
+    border-style: solid;
+    border-left:4px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.btn-border-white {
+    border-top:4px;
+    border-left:4px;
+    border-bottom:4px;
+    border-color:black;
+    border-style: solid;
+    border-right:4px;
+    position:relative;
+}
+
+.black-border-column>.projets:nth-of-type(1) {
+    background: center no-repeat url("../Img/jump-start.png");
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    z-index: 1;
+    grid-area: projet-1;
+}
+.black-border-column>.projets:nth-of-type(2) {
+    background: center no-repeat url("../Img/mega-pop.jpg");
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    z-index: 1;
+    grid-area: projet-2;
+}
+.white-border-column>.projets:nth-of-type(1) {
+    background: center no-repeat url("../Img/pac-man.jpg");
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    z-index: 1;
+    grid-area: projet-3;
+}
+.white-border-column>.projets:nth-of-type(2) {
+    background: center no-repeat url("../Img/rodeo-pump.jpg");
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    z-index: 1;
+    grid-area: projet-4;
+}
+.white-border-column>.projets:nth-of-type(3) {
+    background: no-repeat url("../Img/tarta-papa.png");
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    z-index: 1;
+    grid-area: projet-5;
+}
+
+.projet-clicked {
+    position:absolute;
+    inset: 4px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.projet-description {
+    display:grid;
+    place-items: center;
+}
+
+.black-border-column .projet-description, .black-border-column a {
+    color: white;
+}
+
+.white-border-column .projet-description, .white-border-column a {
+    color:black;
+}
+
+.text {
+    width:70%;
+}
+
+.contact {
+    height: 6rem;
+    position:relative;
+}
+
+.contact-content {
+    position: absolute;
+    inset:0;
+    display:grid;
+    place-items: center;
+}
+
+/* ID */
+#projet-1 {
+    opacity: 0;
+    scroll-margin-top:127.5px;
+    background:black;
+}
+#projet-1-background {
+    background: no-repeat url("../Img/jump-start.png");
+    background-size: cover;
+}
+
+#projet-2 {
+    opacity: 0;
+    scroll-margin-top:127.5px;
+    background:black;
+}
+#projet-2-background {
+    background: no-repeat url("../Img/mega-pop.jpg");
+    background-size: cover;
+}
+
+#projet-3 {
+    opacity: 0;
+    scroll-margin-top:127.5px;
+    background: white;
+}
+#projet-3-background {
+    background: no-repeat url("../Img/pac-man.jpg");
+    background-size: cover;
+}
+
+#projet-4 {
+    opacity: 0;
+    scroll-margin-top:127.5px;
+    background: white;
+}
+#projet-4-background {
+    background: no-repeat url("../Img/rodeo-pump.jpg");
+    background-size: cover;
+}
+
+#projet-5 {
+    opacity: 0;
+    scroll-margin-top:127.5px;
+    background: white;
+}
+#projet-5-background {
+    background: center no-repeat url("../Img/tarta-papa.png");
+    background-size: cover;
+}
+
+#description-1, #description-2, #description-3, #description-4, #description-5 {
+    opacity: 0;
+}
+
+#animation svg {
+    width: 100%;
+}
+
+/* EVENT */
+
+#projet-1:target, #projet-2:target {
+    opacity: 1;
+    z-index: 2;
+    transition:  opacity 0.5s ease;
+}
+
+#projet-3:target, #projet-4:target, #projet-5:target {
+    opacity: 1;
+    z-index: 1;
+    transition:  opacity 0.5s ease;
+}
+
+#projet-1:target #description-1, 
+#projet-2:target #description-2, 
+#projet-3:target #description-3, 
+#projet-4:target #description-4,
+#projet-5:target #description-5{
+    opacity: 1;
+    transition:3s;
+}
+
+.btn:hover.btn::before {
+    left:0%;
+}
+
+.btn:hover .btn-placement {
+    transition: 0.7s;
+    background: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn:hover .btn-border-white, .btn:hover .btn-border-black  {
+    border-color: white;
+    transition: 0.2s;
+}
+
+/* animation */
+/* @keyframes projet-opacity {
+    to {
+        opacity: 1;
+    }
+} */
